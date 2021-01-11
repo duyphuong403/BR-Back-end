@@ -1,17 +1,17 @@
 # BR-Back-end
 
 
-Prerequisites
+Prerequisites:
 
 You must install NodeJS and NPM
 
 
-Installing
+Installing:
 
-using `npm install` or `yarn add` to install the libraries
+- using `npm install` or `yarn add` to install the libraries
 
-create the `.env` file and define: API, DATABASE_ENDPOINT and TOKEN_SECRET
+- create the `.env` file and define: API, DATABASE_ENDPOINT and TOKEN_SECRET
 
-Running
+Running:
 
 using `yarn start` to run
