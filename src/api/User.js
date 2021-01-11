@@ -2,8 +2,8 @@ import { validationResult } from "express-validator"
 import jwt from 'jsonwebtoken'
 
 import { UserModel } from "../models/User"
-import { apiResponse, isValidDob } from "../utils"
-import { isUnprocessableEntity, isBadRequest } from "../exceptions"
+import { apiResponse, isValidDob, unlinkAsync } from "../utils"
+import { isUnprocessableEntity, isBadRequest, isUnauthorized } from "../exceptions"
 
 export default {
   createUser: async (request, response, next) => {
@@ -61,13 +61,15 @@ export default {
 
       /* Check token */
       if (!request.headers.authorization) {
+        /* Remove the file */
+        unlinkAsync(request.file.path)
         return isBadRequest(response, 'Invalid Token')
       }
 
       const userModel = new UserModel()
 
       /* Verify token */
-      const tokenSecret = process.env.TOKEN_SECRET || ''
+      let tokenSecret = process.env.TOKEN_SECRET || ''
 
       jwt.verify(request.headers.authorization, tokenSecret = process.env.TOKEN_SECRET || ''
       , (error, verifiedJwt) => {
