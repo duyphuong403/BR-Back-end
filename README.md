@@ -1,12 +1,12 @@
 # BR-Back-end
 
 
-Prerequisites:
+## Prerequisites:
 
 You must install NodeJS and NPM
 
 
-Installing:
+## Installing:
 
 - using `npm install` or `yarn add` to install the libraries
 
