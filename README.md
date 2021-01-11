@@ -10,8 +10,11 @@ You must install NodeJS and NPM
 
 - using `npm install` or `yarn add` to install the libraries
 
-- create the `.env` file and define: API, DATABASE_ENDPOINT and TOKEN_SECRET
+- create the `.env` file and define: 
+ + API_PORT: the port that the server will run on
+ + DATABASE_ENDPOINT: the URL connect to MongoDB (eg: mongodb://localhost:27017/databaseName)
+ + TOKEN_SECRET: a string used to jwt sign and verify token
 
-Running:
+## Running:
 
 using `yarn start` to run
